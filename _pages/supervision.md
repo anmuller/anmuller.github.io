@@ -35,6 +35,27 @@ Adaptation of interaction force prediction methods for biomechanical analysis in
 
 ## Master students
 
+**Léan Mazier** (ESME Sudria), 2024  
+Évaluation d’une méthode d’estimation des moments intersegmentaires au bas du dos lors d’activités dans le milieu de la petite enfance  
+*Supervised with D. Pardo Ramos (LBMC, department of Val-de-Marne)*
 
+**Baptiste Boulaire** (École de Technologie Supérieure, Montréal), 2024  
+Évaluation de la robustesse d’approches d’analyse du mouvement à partir de vidéos en biomécanique  
+*Supervised with A. Chaumeil (LBMC, Univ Eiffel) and N. Hagemeister (LIO, ETS)*
 
+**Sébastien Fafournoux** (Université Claude Bernard Lyon 1), 2023  
+Analyse de la locomotion du chien sain et pathologique  
+*Supervised with L. Chèze (LBMC, Univ Lyon 1) and B. Gillet (Vetagro Sup)*
+
+**Sophie Bonte** (Institut National des Sciences Appliquées de Toulouse), 2022  
+Évaluation de l’estimation de variables cinématiques à partir de vidéos pour l’analyse d’accidents  
+*Supervised with A. Naaïm (LBMC, Univ Lyon 1) and N. Bailly (LBA, Univ Eiffel)*
+
+**Zoé Pomarat** (Institut National des Sciences Appliquées de Toulouse), 2021  
+Validation d’une modélisation musculo-squelettique personnalisée par fluoroscopie  
+*Supervised with R. Dumas (LBMC, Univ Eiffel)*
+
+**Edouard Vannoorenberghe** (Université de Lorraine), 2021  
+Comparaison et évaluation de modèles biomécaniques personnalisés basés sur l’enveloppe externe  
+*Supervised with T. Robert (LBMC, Univ Eiffel)*
 
