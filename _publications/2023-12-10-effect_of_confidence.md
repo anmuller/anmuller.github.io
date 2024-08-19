@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication_effect_of_confidence
 excerpt: 'Complementary informations'
 date: 2023-12-10
-venue: 'Computer Methods in Biomechanics and Biomedical Engineering: Imaging & Visalization'
+venue: 'Computer Methods in Biomechanics and Biomedical Engineering: Imaging & Visualization'
 paperurl: 'https://doi.org/10.1080/21681163.2023.2292067'
 citation: ''
 authors: 'Anaïs Chaumeil, <b>Antoine Muller</b>, Raphaël Dumas, Thomas Robert'
