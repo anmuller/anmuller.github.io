@@ -7,7 +7,7 @@ date: 2023-12-10
 venue: 'Computer Methods in Biomechanics and Biomedical Engineering: Imaging & Visualization'
 paperurl: 'https://doi.org/10.1080/21681163.2023.2292067'
 citation: ''
-authors: 'Anaïs Chaumeil, <b>Antoine Muller</b>, Raphaël Dumas, Thomas Robert'
+authors: 'A. Chaumeil, <b>A. Muller</b>, R. Dumas, T. Robert'
 teaser: "effect_of_confidence.png"
 ---
 
