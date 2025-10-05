@@ -7,7 +7,7 @@ def get_personal_data():
     linkedin = "antoine-muller-ab5a2b1a7"
     bio_text = f"""
                 <p>
-                    TOOD.
+                    TODO.
                 </p>
                 <p>For any inquiries, feel free to reach out to me via mail!</p>
                 <p>
