@@ -128,7 +128,7 @@ def get_paper_entry(entry_key, entry):
     	cite += f"\t{'journal'} = " + "{" + f"{entry.fields['journal']}" + "}, \n"
     cite += f"\t{'year'} = " + "{" + f"{entry.fields['year']}" + "}, \n"
     cite += """}</pre></code>"""
-    s += " /" + f"""<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{entry_key}" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapse{entry_key}"><div class="card card-body">{cite}</div></div>"""
+    s += " /" + f"""<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{entry_key}" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: 0px;">Expand bibtex</button><div class="collapse" id="collapse{entry_key}"><div class="card card-body">{cite}</div></div>"""
     s += """ </div> </div> </div>"""
     return s
 
