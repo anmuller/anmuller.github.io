@@ -8,7 +8,7 @@ def get_personal_data():
     bio_text = f"""
                 <p>
                     I'm an Associate Professor in the mechanics department at University Claude Bernard Lyon 1.
-                    I conduct my research activities at the Laboratory of Biomechanics and Impact Mechanics (LBMC UMR T_9406).
+                    I conduct my research activities at the <a href="https://lbmc.univ-gustave-eiffel.fr/" target="_blank">Laboratory of Biomechanics and Impact Mechanics</a> (LBMC UMR T_9406).
                     My research activites mainly concern the development of numerical tools for in situ motion analysis. Currently, my work has focused on markerless video-based analysis.
                 </p>
                 <p>For any inquiries, feel free to reach out to me via mail!</p>
