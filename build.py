@@ -23,7 +23,7 @@ def get_personal_data():
             <div class="col-sm-12" style="">
                 <h4>Homepage Template</h4>
                 <p>
-                    This homepage is based on the template by <a href="https:m-niemeyer.github.io" target="_blank"> Michael Niemeyer</a>. Checkout his <a href="https://github.com/m-niemeyer/m-niemeyer.github.io" target="_blank"> github repository</a> for instructions on how to use it. <br>
+                    This homepage is based on the template by Michael Niemeyer. Checkout his <a href="https://github.com/m-niemeyer/m-niemeyer.github.io" target="_blank"> github repository</a> for instructions on how to use it. <br>
                 </p>
             </div>
     """
