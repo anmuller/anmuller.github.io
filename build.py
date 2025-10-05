@@ -70,41 +70,7 @@ def get_author_dict():
         'Kfir Aberman': 'https://kfiraberman.github.io/',
         'Michael Rubinstein': 'http://people.csail.mit.edu/mrub/',
         'Yuanzhen Li': 'http://people.csail.mit.edu/yzli/',
-        'Varun Jampani': 'https://varunjampani.github.io/',
-        'Francis Engelmann': 'https://francisengelmann.github.io/',
-        'Mohamad Shahbazi': 'https://mohamad-shahbazi.github.io/',
-        'Liesbeth Claessens': 'https://asl.ethz.ch/the-lab/people/person-detail.MjY5NDUz.TGlzdC8xNTg0LDEyMDExMzk5Mjg=.html',
-        'Edo Collins': 'https://www.linkedin.com/in/edo-collins/?originalSubdomain=ch',
-        'Luc Van Gool': 'https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html',
-        'Fangjinhua Wang': 'https://fangjinhuawang.github.io/',
-        'Richard Szeliski': 'https://szeliski.org/',
-        'Kunyi Li': 'https://campus.tum.de/tumonline/ee/ui/ca2/app/desktop/#/pl/ui/$ctx/visitenkarte.show_vcard?$ctx=design=ca2;header=max;lang=de&pPersonenGruppe=3&pPersonenId=6EC78DAA25310FF2',
-        'Nassir Navab': 'https://www.professoren.tum.de/en/navab-nassir',
-        'Rama Gosula': 'https://arvr.google.com/',
-        'John Bates': 'https://arvr.google.com/',
-        'Dominik Kaeser': 'https://scholar.google.com/citations?user=DQ4838YAAAAJ&hl=en',
-        'Erik Sandström': 'https://scholar.google.com/citations?user=phiETm4AAAAJ&hl=en',
-        'Luc Van-Gool': 'https://insait.ai/prof-luc-van-gool/',
-        'Martin Oswald': 'https://oswaldm.github.io/',
-        'Fangneng Zhan': 'https://fnzhan.com/',
-        'Hanxue Liang': 'https://scholar.google.com/citations?user=XcxDA14AAAAJ&hl=en',
-        'Yifan Wang': 'https://yifita.netlify.app/',
-        'Adam Kortylewski': 'https://genintel.mpi-inf.mpg.de/',
-        'Cengiz Oztireli': 'https://www.cl.cam.ac.uk/~aco41/',
-        'Gordon Wetzstein': 'https://stanford.edu/~gordonwz/', 
-        'Christian Theobalt': 'https://people.mpi-inf.mpg.de/~theobalt/',
-        'Siyun Liang': 'https://siyun-liang.github.io/',
-        'Thomas Wimmer': 'https://wimmerth.github.io/',
-        'Sen Wang': 'https://scholar.google.com/citations?user=OxZ9S6oAAAAJ&hl=en',
-        'Stefano Gasperini': 'https://www.cs.cit.tum.de/camp/members/stefano-gasperini/',
-        'Zeyu Chen': 'https://zeyuuuchen.github.io/',
-        'Jonas Kulhanek': 'https://jkulhanek.com/',
-        'Yiming Wang': 'https://scholar.google.com/citations?user=AVOZmU8AAAAJ&hl=en',
-        'Lucy Chai': 'https://scholar.google.com/citations?user=bunnQWQAAAAJ&hl=en',
-        'Xuan Luo': 'https://roxanneluo.github.io/',
-        'Manuel Lagunas': 'https://mlagunas.me/',
-        'Stephen Lombardi': 'https://stephenlombardi.github.io/',
-        'Tiancheng Sun': 'https://www.kevinkingo.com/',
+        'Varun Jampani': 'https://varunjampani.github.io/'
         }
 
 def generate_person_html(persons, connection=", ", make_bold=True, make_bold_name='Michael Niemeyer', add_links=True):
@@ -136,8 +102,10 @@ def get_paper_entry(entry_key, entry):
         s += f"""<a href="{entry.fields['html']}" target="_blank">{entry.fields['title']}</a> <br>"""
 
     s += f"""{generate_person_html(entry.persons['author'])} <br>"""
-    s += f"""<span style="font-style: italic;">{entry.fields['booktitle']}</span>, {entry.fields['year']} <br>"""
-
+    if 'booktitle' in entry.fields.keys():
+   	 s += f"""<span style="font-style: italic;">{entry.fields['booktitle']}</span>, {entry.fields['year']} <br>"""
+    else:
+   	 s += f"""<span style="font-style: italic;">{entry.fields['journal']}</span>, {entry.fields['year']} <br>"""
     artefacts = {'html': 'Project Page', 'pdf': 'Paper', 'supp': 'Supplemental', 'video': 'Video', 'poster': 'Poster', 'code': 'Code'}
     i = 0
     for (k, v) in artefacts.items():
@@ -151,8 +119,12 @@ def get_paper_entry(entry_key, entry):
 
     cite = "<pre><code>@InProceedings{" + f"{entry_key}, \n"
     cite += "\tauthor = {" + f"{generate_person_html(entry.persons['author'], make_bold=False, add_links=False, connection=' and ')}" + "}, \n"
-    for entr in ['title', 'booktitle', 'year']:
-        cite += f"\t{entr} = " + "{" + f"{entry.fields[entr]}" + "}, \n"
+    cite += f"\t{'title'} = " + "{" + f"{entry.fields['title']}" + "}, \n"
+    if 'booktitle' in entry.fields.keys():
+    	cite += f"\t{'booktitle'} = " + "{" + f"{entry.fields['booktitle']}" + "}, \n"
+    else:
+    	cite += f"\t{'journal'} = " + "{" + f"{entry.fields['journal']}" + "}, \n"
+    cite += f"\t{'year'} = " + "{" + f"{entry.fields['year']}" + "}, \n"
     cite += """}</pre></code>"""
     s += " /" + f"""<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{entry_key}" aria-expanded="false" aria-controls="collapseExample" style="margin-left: -6px; margin-top: -2px;">Expand bibtex</button><div class="collapse" id="collapse{entry_key}"><div class="card card-body">{cite}</div></div>"""
     s += """ </div> </div> </div>"""
@@ -220,33 +192,33 @@ def get_index_html():
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="row" style="margin-top: 3em;">
-                    <div class="col-sm-12" style="margin-bottom: 1em;">
-                    <h3 class="display-4" style="text-align: center;"><span style="font-weight: bold;">{name[0]}</span> {name[1]}</h3>
-                    </div>
-                    <br>
-                    <div class="col-md-10" style="">
-                        {bio_text}
-                    </div>
-                    <div class="col-md-2" style="">
-                        <img src="assets/img/profile.jpg" class="img-thumbnail" width="280px" alt="Profile picture">
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 1em;">
-                    <div class="col-sm-12" style="">
-                        <h4>Publications</h4>
-                        {pub}
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 3em; margin-bottom: 1em;">
-                    {footer}
-                </div>
+        <div class="row" style="margin-top: 3em;">
+            <div class="col-sm-12" style="margin-bottom: 1em;">
+            <h3 class="display-4" style="text-align: center;"><span style="font-weight: bold;">{name[0]}</span> {name[1]}</h3>
             </div>
-            <div class="col-md-1"></div>
-        </div?
+            <br>
+            <div class="col-md-8" style="">
+                {bio_text}
+            </div>
+            <div class="col-md-4" style="">
+                <img src="assets/img/profile.jpg" class="img-thumbnail" width="280px" alt="Profile picture">
+            </div>
+        </div>
+        <div class="row" style="margin-top: 1em;">
+            <div class="col-sm-12" style="">
+                <h4>Publications</h4>
+                {pub}
+            </div>
+        </div>
+        <div class="row" style="margin-top: 3em;">
+            <div class="col-sm-12" style="">
+                <h4>Talks</h4>
+                {talks}
+            </div>
+        </div>
+        <div class="row" style="margin-top: 3em; margin-bottom: 1em;">
+            {footer}
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
