@@ -19,15 +19,15 @@ def get_personal_data():
                     <a href="https://www.linkedin.com/in/antoine-muller-ab5a2b1a7" target="_blank" style="margin-right: 5px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
                 </p>
     """
-    footer = """
-            <div class="col-sm-12" style="">
-                <h4>Homepage Template</h4>
-                <p>
-                    Feel free to use this website as a template! It is fully responsive and very easy to use and maintain as it uses a python script that crawls your bib files to automatically add the papers and talks. If you find it helpful, please add a link to my website - I will also add a link to yours (if you want). <a href="https://github.com/m-niemeyer/m-niemeyer.github.io" target="_blank">Checkout the github repository for instructions on how to use it</a>. <br>
-                </p>
-            </div>
-    """
-    return name, bio_text, footer
+    #footer = """
+    #        <div class="col-sm-12" style="">
+    #            <h4>Homepage Template</h4>
+    #            <p>
+    #                Feel free to use this website as a template! It is fully responsive and very easy to use and maintain as it uses a python script that crawls your bib files to automatically add the papers and talks. If you find it helpful, please add a link to my website - I will also add a link to yours (if you want). <a href="https://github.com/m-niemeyer/m-niemeyer.github.io" target="_blank">Checkout the github repository for instructions on how to use it</a>. <br>
+    #            </p>
+    #        </div>
+    #"""
+    return name, bio_text
 
 def get_author_dict():
     return {
@@ -171,7 +171,7 @@ def get_talks_html():
 def get_index_html():
     pub = get_publications_html()
     talks = get_talks_html()
-    name, bio_text, footer = get_personal_data()
+    name, bio_text = get_personal_data()
     s = f"""
     <!doctype html>
 <html lang="en">
@@ -209,9 +209,6 @@ def get_index_html():
                 <h4>Publications</h4>
                 {pub}
             </div>
-        </div>
-        <div class="row" style="margin-top: 3em; margin-bottom: 1em;">
-            {footer}
         </div>
     </div>
 
