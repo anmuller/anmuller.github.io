@@ -103,9 +103,9 @@ def get_paper_entry(entry_key, entry):
 
     s += f"""{generate_person_html(entry.persons['author'])} <br>"""
     if 'booktitle' in entry.fields.keys():
-   	 s += f"""<span style="font-style: italic;">{entry.fields['booktitle']}</span>, {entry.fields['year']} <br>"""
+   	    s += f"""<span style="font-style: italic;">{entry.fields['booktitle']}</span>, {entry.fields['year']} <br>"""
     else:
-   	 s += f"""<span style="font-style: italic;">{entry.fields['journal']}</span>, {entry.fields['year']} <br>"""
+   	    s += f"""<span style="font-style: italic;">{entry.fields['journal']}</span>, {entry.fields['year']} <br>"""
     artefacts = {'html': 'Project Page', 'pdf': 'Paper', 'supp': 'Supplemental', 'video': 'Video', 'poster': 'Poster', 'code': 'Code'}
     i = 0
     for (k, v) in artefacts.items():
