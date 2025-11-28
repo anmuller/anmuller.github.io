@@ -7,7 +7,7 @@ def get_personal_data():
     linkedin = "antoine-muller-ab5a2b1a7"
     bio_text = f"""
                 <p>
-                    I am an Associate Professor in <a href="https://fst-meca.univ-lyon1.fr/" target="_blank">the Department of Mechanics</a> at Claude Bernard University Lyon 1.
+                    I am an Associate Professor in <a href="https://fst-meca.univ-lyon1.fr/" target="_blank">the Department of Mechanics</a> at Claude Bernard University Lyon 1.<br>
                     I conduct my research at the <a href="https://lbmc.univ-gustave-eiffel.fr/" target="_blank">Laboratory of Biomechanics and Impact Mechanics</a> (LBMC, UMR T_9406).
                     My work mainly focuses on developing numerical tools for <i>in situ</i> motion analysis. Currently, my research is centered on markerless video-based motion analysis.
                 </p>
